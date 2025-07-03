@@ -28,17 +28,6 @@ Dynamic Programming, Greedy, Sliding Window
 
 Hashing, Stacks, Queues, and more
 
-POTD/
-├── LEETCODE/
-│   └── JULY/
-│       ├── 01-07-2025.cpp   # LeetCode POTD
-│       ├── 02-07-2025.cpp
-│       └── ...
-├── GFG/
-│   └── JULY/
-│       ├── 01-07-2025.cpp   # GFG POTD
-│       ├── 02-07-2025.cpp
-│       └── ...
-└── README.md
+<pre> ``` POTD/ ├── LEETCODE/ │ └── JULY/ │ ├── 01-07-2025.cpp # LeetCode POTD │ ├── 02-07-2025.cpp │ └── ... ├── GFG/ │ └── JULY/ │ ├── 01-07-2025.cpp # GFG POTD │ ├── 02-07-2025.cpp │ └── ... └── README.md ``` </pre>
 
 
