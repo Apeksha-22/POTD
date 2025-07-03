@@ -30,11 +30,14 @@ Hashing, Stacks, Queues, and more
 
 POTD/
 ├── LEETCODE/
-│   ├── 01-07-2025.cpp   # Solution of LeetCode's daily challenge
-│   ├── 02-07-2025.cpp
-│   └── ...
+│   └── JULY/
+│       ├── 01-07-2025.cpp   # LeetCode POTD
+│       ├── 02-07-2025.cpp
+│       └── ...
 ├── GFG/
-│   ├── 01-07-2025.cpp   # GFG Problem of the Day
-│   ├── 02-07-2025.cpp
-│   └── ...
+│   └── JULY/
+│       ├── 01-07-2025.cpp   # GFG POTD
+│       ├── 02-07-2025.cpp
+│       └── ...
 └── README.md
+
