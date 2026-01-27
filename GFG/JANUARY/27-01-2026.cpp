@@ -1,0 +1,57 @@
+// Word Search
+
+
+
+class Solution {
+  public:
+    vector<vector<int>> ch={{0,-1},{-1,0},{0,1},{1,0}};
+    bool isvalid(int i,int j,int n,int m){
+        if(i>=0&&i<n&&j>=0&&j<m){
+            return true;
+        }
+        return false;
+    }
+    bool check(vector<vector<char>> v,string w,int k1,int k2,int k3,vector<vector<int>> vis){
+        int n=v.size();
+        int m=v[0].size();
+        if(k3==w.size()){
+            return true;
+        }
+        bool res=false;
+        for(auto &c:ch){
+            int i=k1+c[0];
+            int j=k2+c[1];
+            if(isvalid(i,j,n,m)){
+                if(v[i][j]==w[k3]&&vis[i][j]==0){
+                    vis[i][j]=1;
+                    res=check(v,w,i,j,k3+1,vis);
+                    if(res){
+                        return res;
+                    }
+                    v[i][j]=0;
+                }
+            }
+        }
+        return res;
+    }
+    bool isWordExist(vector<vector<char>> &mat, string &word) {
+        // Code here
+        int n=mat.size();
+        int m=mat[0].size();
+        vector<vector<int>> vis(n,vector<int>(m,0));
+        int k=0;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if(mat[i][j]==word[k]){
+                    vis[i][j]=1;
+                    bool fl=check(mat,word,i,j,k+1,vis);
+                    if(fl){
+                        return fl;
+                    }
+                    vis[i][j]=0;
+                }
+            }
+        }
+        return false;
+    }
+};
