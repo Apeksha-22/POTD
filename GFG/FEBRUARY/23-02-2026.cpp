@@ -1,25 +1,30 @@
-// 1461. Check If a String Contains All Binary Codes of Size K
+// User function template in C++
+// Union of Arrays with Duplicates
 
 
 
 class Solution {
-public:
-    bool hasAllCodes(string s, int k) {
-        int req = 1 << k;
-        bitset<1048576> seen;
-        int mask = req - 1;
-        int hash = 0;
-
-        for (int i = 0; i < s.length(); ++i) {
-            hash = ((hash << 1) & mask) | (s[i] & 1);
-
-            if (i >= k - 1 && !seen[hash]) {
-                seen[hash] = 1;
-                req--;
-                if (req == 0) return true;
+  public:
+    vector<int> findUnion(vector<int>& a, vector<int>& b) {
+        // code here
+        unordered_set<int>st;
+        vector<int>ans1;
+        for(int i=0;i<a.size();i++)
+        {
+            if(st.find(a[i])==st.end())
+            {
+                st.insert(a[i]);
+                ans1.push_back(a[i]);
             }
         }
-
-        return false;
+        for(int i=0;i<b.size();i++)
+        {
+            if(st.find(b[i])==st.end())
+            {
+                st.insert(b[i]);
+                ans1.push_back(b[i]);
+            }
+        }
+        return ans1;
     }
 };
