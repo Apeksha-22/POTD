@@ -6,15 +6,30 @@ class Solution {
   public:
     vector<string> graycode(int n) {
         // code here
-        vector<string> ans = {"0", "1"};
+          int bits = n;
+    vector<string> sequence = {"0","1"};
+    
+    
+    for(int j = 1; j < bits; j++){
+        vector<string> temp;
         
-        for (int i = 2; i <= n; i++) {
-            int size = ans.size();
-            
-            for (int j = size-1; j >= 0; j--) {
-                ans.push_back('1'+ans[j]);
-                ans[j] = '0'+ans[j];
-            }
+        for(int i = sequence.size() - 1; i >= 0; i--){
+            string s = "1" + sequence[i];
+            temp.push_back(s);
         }
-        return ans;
+        
+        for(int i = 0; i < sequence.size(); i++){
+            sequence[i] = "0" + sequence[i];
+        }
+        
+       for(string num : temp){
+          sequence.push_back(num);
+       }
+       
+       temp.clear();
+        
     }
+    
+    return sequence;
+    }
+};
