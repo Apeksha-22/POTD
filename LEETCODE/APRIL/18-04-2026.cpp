@@ -1,0 +1,15 @@
+// 3783. Mirror Distance of an Integer
+
+
+class Solution {
+public:
+    int mirrorDistance(int n) {
+        int x=0;
+        int y=n;
+        while(y>0){
+            x = x*10 + y%10;
+            y/=10;
+        }
+        return abs(n-x);
+    }
+};
